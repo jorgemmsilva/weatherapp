@@ -1,6 +1,6 @@
 # Simple Weather App
 
-Implementation of a simple weather app using yahoo API, Node.js and Angular.js
+Implementation of a simple weather app using yahoo API, Node.js and Angular.js ([**demo**](http://www.jorgesilva.xyz/weatherapp/))
 
 
 Prerequisites
@@ -10,7 +10,7 @@ Prerequisites
 Usage
 --------------
 
-Application will be hosted on port 8080 after runing the startapp script
+Application will be listening on port 8080 after running the startapp script.
 
 ###Windows
 `startapp.bat`
