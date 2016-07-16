@@ -10,9 +10,10 @@ Prerequisites
 Usage
 --------------
 
+Application will be hosted on port 8080 after runing the startapp script
 
 ###Windows
-Run startapp.bat
+`startapp.bat`
 
 ###Unix
-Run startapp.sh
+`startapp.sh`
