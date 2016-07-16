@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html ng-app="weather">
+
+	<head>
+		<title>Weather App</title>
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="../assets/build/css/styles.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+		<script src="../assets/build/js/script.js"></script>
+	</head>
+
+	<body>
+
+		<div id="weather_wrapper" ng-controller="WeatherController as weather">
+
+			<div class="header">
+				<h3>Weather App</h3>
+			</div>
+
+			<div id="query_div">
+				<input type="text" name="location" id="location_input" placeholder="Type a location" ng-keyup="weather.locationInput($event)">
+			</div>
+
+			<div id="message_div">
+				{{message}}
+				<success-message ng-show="weatherItem.title">
+				</success-message>
+			</div>
+
+
+			<div id="results_div" ng-show="forecast[0]">
+
+				<div id="options">
+					<input type="checkbox" ng-model="temperature_unit" ng-true-value="'C'" ng-false-value="'F'"> Convert to Celcius
+				</div>
+
+				<div class="days">
+
+					<!-- ng-include="partials/day_forecast.html" -->
+
+					<div class="day" ng-repeat="dayForecast in forecast | limitTo: 5" >
+						<div class="date"> {{ dayForecast.day + ',' + dayForecast.date }} </div>
+						<div class="weather_text"> {{ dayForecast.text }} </div>
+						<div class="temphigh"> {{ convertTemperature(dayForecast.high) }} {{ temperature_unit }}</div>
+						<div class="templow"> {{ convertTemperature(dayForecast.low) }} {{ temperature_unit }}</div>
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</body>
+</html>

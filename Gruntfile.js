@@ -5,7 +5,7 @@ module.exports = function(grunt){
 	  uglify: {
 	    my_target: {
 	      files: {
-	        'script.js': ['js/script.js'],
+	        'assets/build/js/script.js': ['assets/js/script.js'],
 	      }
 	    }
 	  },	
@@ -17,18 +17,23 @@ module.exports = function(grunt){
 		  },
 		  target: {
 		    files: {
-		      'styles.css': ['css/styles.css']
+		      'assets/build/css/styles.css': ['assets/css/styles.css']
 		    }
 		  }
-		}
+		},
+
+		nodeunit: {
+	    all: ['test/*_test.js']
+	  }
 
 	});
 
 
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
+	grunt.loadNpmTasks('grunt-contrib-nodeunit');
 
 	//Default tasks
-	grunt.registerTask('default',['uglify','cssmin']);
+	grunt.registerTask('default',['nodeunit','uglify','cssmin']);
 
 };
