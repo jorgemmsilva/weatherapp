@@ -28,6 +28,6 @@
 	font-size: 10px;
 }
 
-body{
-	font-family: 'Open Sans', sans-serif;
+.header {
+  padding: 30px;
 }
